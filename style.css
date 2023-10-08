@@ -105,17 +105,22 @@ body *{
     position: absolute;
     z-index: 1;
     top: 50%;
-    left: 0;
+    animation: slide-back .4s forwards;
     transform:  translateY(-50%);
     -webkit-transform:  translateY(-50%);
     -moz-transform:  translateY(-50%);
     -ms-transform:  translateY(-50%);
     -o-transform:  translateY(-50%);
+    -webkit-animation: slide-back .4s forwards;
 }
 
 .light .switch button{
-    right: 0;
-    left: initial;
+    animation: slide-in .4s forwards;
+    -webkit-animation: slide-in .4s forwards;
+}
+
+ .switch button:hover{
+    outline: 8px solid var(--hightlight-color);
 }
 
 .switch span{
@@ -218,10 +223,30 @@ body *{
 
 @media (min-width: 768px) {
     :root{
-        --bg-url: url(./assets/bg-desktop.jpg)
+        --bg-url: url(./assets/bg-desktop.jpg);
     }
 
-    :light{
-        --bg-url: url(./assets/bg-desktop-light.jpg)
+    .light{
+        --bg-url: url(./assets/bg-desktop-light.jpg);
+    }
+}
+
+/* animatio */
+
+@keyframes slide-in {
+    from{
+        left: 0;
+    }
+    to{
+        left: 50%;
+    }
+}
+
+@keyframes slide-back {
+    from{
+        left: 50%;
+    }
+    to{
+        left: 0;
     }
 }
