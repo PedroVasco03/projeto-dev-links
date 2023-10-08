@@ -30,6 +30,7 @@
 
 body{
     background: var(--bg-url) no-repeat top center/cover;
+    height: 100vh;
 }
 
 body *{
@@ -213,4 +214,14 @@ body *{
     text-decoration: none;
     font-weight: 600;
 
+}
+
+@media (min-width: 768px) {
+    :root{
+        --bg-url: url(./assets/bg-desktop.jpg)
+    }
+
+    :light{
+        --bg-url: url(./assets/bg-desktop-light.jpg)
+    }
 }
